@@ -10,7 +10,7 @@ const LoginScreen = () => {
     const dispatch = useDispatch();
 
     const handleGoogleLongin = () => {
-        dispatch(googleLogin("12345", "Agustin"));
+        dispatch(googleLogin());
     }
 
     return (
