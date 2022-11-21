@@ -2,9 +2,11 @@ import { combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from '../reducers/authReducer';
 import { legacy_createStore as createStore} from 'redux'
+import { nominaReducer } from '../reducers/nominaReducer';
 
 const reducers = combineReducers({
     auth: authReducer,
+    nomina: nominaReducer
 });
 
 const composeEnhancers =
