@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { startLogout } from '../actions/auth'
+import './styles_component.css'
 
 const Navbar = () => {
 
@@ -12,8 +13,8 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div className="nav-wrapper grey">
-                <span href="#" className="brand-logo ">Sistema de contabilidad UTN-frm</span>
+            <div className="nav-wrapper grey nav-padi">
+                <h6 href="#" className="brand-logo ">Sistema de contabilidad UTN-frm</h6>
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><a href="sass.html">Sass</a></li>
                     <li><a href="badges.html">Components</a></li>

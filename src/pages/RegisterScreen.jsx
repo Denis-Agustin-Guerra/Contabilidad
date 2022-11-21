@@ -94,7 +94,7 @@ export const RegisterScreen = () => {
                     </div>
                     <hr />
                     {/* <GoogleButton onClick={handleGoogleLongin} /> */}
-                    <Link to='/login'>Login into a count</Link>
+                    <Link to='/auth/login'>Login into a count</Link>
                 </form>
             </div>
         </div>

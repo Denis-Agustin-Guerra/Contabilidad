@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import GoogleButton from 'react-google-button'
 import { Link } from "react-router-dom";
 import { googleLogin, startLoginEmailPassword } from '../actions/auth';
+import RegisterScreen from './RegisterScreen';
 
 
 const LoginScreen = () => {
@@ -35,6 +36,9 @@ const LoginScreen = () => {
     const handleGoogleLongin = () => {
         dispatch(googleLogin());
     }
+    // const handleRegister = () => {
+    //     dispatch(<RegisterScreen/>);
+    // }
     const handleEmailLogin = (e) => {
         e.preventDefault();
         if (email.trim === "" || !email.trim().includes("@")) {
@@ -72,7 +76,8 @@ const LoginScreen = () => {
                     </div>
                     <hr />
                     <GoogleButton onClick={handleGoogleLongin} />
-                    <Link to='/register'>Register in the platform</Link>
+                    {/* <button onClick={handleRegister} className='btn'>Register</button> */}
+                    <Link to='/auth/register'>Register in the platform</Link>
                 </form>
             </div>
         </div>

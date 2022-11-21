@@ -1,6 +1,7 @@
-import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+import { combineReducers, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import authReducer from '../reducers/authReducer';
+import { legacy_createStore as createStore} from 'redux'
 
 const reducers = combineReducers({
     auth: authReducer,

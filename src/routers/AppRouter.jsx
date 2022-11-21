@@ -1,13 +1,40 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { Switch, BrowserRouter as Router } from 'react-router-dom'
+import login from '../actions/auth'
 import AppScreen from '../pages/AppScreen'
+import AuthRouter from './AuthRouter'
+import PrivateRouter from './PrivateRouter'
+import { firebase } from '../firebase/config_firebase'
+import PublicRouter from './PublicRouter'
+
 
 const AppRouter = () => {
+  const dispatch = useDispatch();
+
+  const [log, setLog] = useState(false);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(login(user.uid, user.displayName));
+        setLog(true);
+      } else
+        setLog(false);
+    }
+    )
+  }, [dispatch])
+
+
   return (
     <div>
-      <Switch>
-        <Route exact path="/app" component={AppScreen} />
-      </Switch>
+      <Router>
+        <Switch>
+          {/* <AppScreen /> */}
+          <PublicRouter path="/auth" component={AuthRouter} log={log} />
+          <PrivateRouter exact path="/" component={AppScreen} log={log} />
+        </Switch>
+      </Router>
     </div>
   )
 }

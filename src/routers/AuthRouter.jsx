@@ -1,33 +1,17 @@
-import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import LoginScreen from '../pages/LoginScreen'
 import RegisterScreen from '../pages/RegisterScreen'
-import { firebase } from '../firebase/config_firebase'
-import { useDispatch } from 'react-redux'
-import login from '../actions/auth'
-import AppRouter from './AppRouter'
+
 
 const AuthRouter = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        dispatch(login(user.uid, user.displayName));
-      }
-    }
-    )
-  }, [dispatch])
-
+  console.log("AuthRouter");
   return (
-    <Router>
       <Switch>
-        <Route exact path="/login" component={LoginScreen} />
-        <Route exact path="/register" component={RegisterScreen} />
-        <AppRouter />
+        <Route exact path="/auth/login" component={LoginScreen} />
+        <Route exact path="/auth/register" component={RegisterScreen} />
+        <Redirect to="/auth/login" />
       </Switch>
-
-    </Router>
   )
 }
 
