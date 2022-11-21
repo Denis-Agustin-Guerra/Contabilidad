@@ -1,8 +1,14 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+import AppScreen from '../pages/AppScreen'
 
 const AppRouter = () => {
   return (
-    <div>AppRouter</div>
+    <div>
+      <Switch>
+        <Route exact path="/app" component={AppScreen} />
+      </Switch>
+    </div>
   )
 }
 
