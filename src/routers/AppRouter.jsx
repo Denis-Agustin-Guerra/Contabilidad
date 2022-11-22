@@ -33,7 +33,7 @@ const AppRouter = () => {
 
 
   return (
-    <div>
+    <div className=' grey darken-2 white-text'>
       <Router>
         <Switch>
           {/* <AppScreen /> */}

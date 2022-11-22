@@ -16,10 +16,11 @@ const AppScreen = () => {
             <Navbar />
             <h6 className='right-align'>user: {name} </h6>
             <div className='container'>
-                <h3 className='center'>Libro diario y libro Mayor</h3>
+                <h3 className='center'>Libro Diario</h3>
                 <hr />
                 <FormAdd />
             </div>
+            <h3 className='center'>Libro Mayor</h3>
             <table className="highlight">
                 <thead>
                     <tr>

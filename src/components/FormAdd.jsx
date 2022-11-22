@@ -40,27 +40,27 @@ const FormAdd = () => {
             {viewForm && (
                 <div>
                     <div class="row">
-                        <div class="col s12 m6 l3"><input
+                        <div class="col s12 m6 l3"><input className='white-text'
                             type="date"
                             onChange={handleChange}
                             value={fecha}
                             name="fecha"
                         /></div>
-                        <div class="col s12 m6 l3"><input
+                        <div class="col s12 m6 l3"><input className='white-text'
                             type="text"
                             placeholder='Debe o Haber'
                             onChange={handleChange}
                             value={debehaber}
                             name="debehaber"
                         /></div>
-                        <div class="col s12 m6 l3"><input
+                        <div class="col s12 m6 l3"><input className='white-text'
                             type="text"
                             placeholder='Tipo de Cuenta'
                             onChange={handleChange}
                             value={cuenta}
                             name="cuenta"
                         /></div>
-                        <div class="col s12 m6 l3"><input
+                        <div class="col s12 m6 l3"><input className='white-text'
                             type="number"
                             placeholder='Ingresar monto'
                             onChange={handleChange}
