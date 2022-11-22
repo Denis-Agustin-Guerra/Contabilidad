@@ -60,14 +60,14 @@ const LoginScreen = () => {
                             <div className="row">
                                 <div className="input-field col s12">
                                     <i className="material-icons prefix">email</i>
-                                    <input onChange={handleChanges} name='email' id="email" type="email" className="validate" />
+                                    <input onChange={handleChanges} name='email' id="email" type="email" className="validate white-text" />
                                     <label htmlFor="email">Email</label>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
                                     <i className="material-icons prefix">key</i>
-                                    <input id="password" onChange={handleChanges} name='password' type="password" className="validate" />
+                                    <input id="password" onChange={handleChanges} name='password' type="password" className="validate white-text" />
                                     <label htmlFor="password">Password</label>
                                 </div>
                             </div>
