@@ -26,7 +26,7 @@ const FormAdd = () => {
         setDatos({
             ...datos,
             [e.target.name]: e.target.value
-            });
+        });
     }
 
     const handleSave = () => {
@@ -39,35 +39,36 @@ const FormAdd = () => {
 
             {viewForm && (
                 <div>
+                    <div class="row">
+                        <div class="col s12 m6 l3"><input
+                            type="date"
+                            onChange={handleChange}
+                            value={fecha}
+                            name="fecha"
+                        /></div>
+                        <div class="col s12 m6 l3"><input
+                            type="text"
+                            placeholder='Debe o Haber'
+                            onChange={handleChange}
+                            value={debehaber}
+                            name="debehaber"
+                        /></div>
+                        <div class="col s12 m6 l3"><input
+                            type="text"
+                            placeholder='Tipo de Cuenta'
+                            onChange={handleChange}
+                            value={cuenta}
+                            name="cuenta"
+                        /></div>
+                        <div class="col s12 m6 l3"><input
+                            type="number"
+                            placeholder='Ingresar monto'
+                            onChange={handleChange}
+                            value={monto}
+                            name="monto"
+                        /></div>
+                    </div>
 
-                    <input
-                        type="text"
-                        placeholder='Ingresar fecha de operacion (dd/mm/aaaa)'
-                        onChange={handleChange}
-                        value={fecha}
-                        name="fecha"
-                    />
-                    <input
-                        type="text"
-                        placeholder='Debe o Haber'
-                        onChange={handleChange}
-                        value={debehaber}
-                        name="debehaber"
-                    />
-                    <input
-                        type="text"
-                        placeholder='Tipo de Cuenta'
-                        onChange={handleChange}
-                        value={cuenta}
-                        name="cuenta"
-                    />
-                    <input
-                        type="number"
-                        placeholder='Ingresar monto'
-                        onChange={handleChange}
-                        value={monto}
-                        name="monto"
-                    />
                     <button onClick={handleSave} className='btn blue' >Guardar</button>
                 </div>
             )

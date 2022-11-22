@@ -7,12 +7,33 @@
 
 import types from "../types/types";
 
+const initialState = {
+    data: [],
+}
 
-export const nominaReducer = (state = {}, action) => {
+export const nominaReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case types.registroAdd:
-            return {}; 
+            return {
+                ...state,
+                data: [...state.data, action.payload]
+            };
+        case types.registroRead:
+            return {
+                ...state,
+                data: action.payload
+            };
+        case types.registroDelete:
+            return {
+                ...state,
+                data: state.data.filter(data => data.id !== action.payload)
+            };
+        case types.registroClean:
+            return {
+                ...state,
+                data: []
+            };
 
         default:
             return state;

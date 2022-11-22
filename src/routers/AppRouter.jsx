@@ -7,6 +7,8 @@ import AuthRouter from './AuthRouter'
 import PrivateRouter from './PrivateRouter'
 import { firebase } from '../firebase/config_firebase'
 import PublicRouter from './PublicRouter'
+import { loadData } from '../helpers/loadData'
+import { leerRegistros } from '../actions/nomina'
 
 
 const AppRouter = () => {
@@ -15,10 +17,14 @@ const AppRouter = () => {
   const [log, setLog] = useState(false);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged( async (user) => {
       if (user) {
         dispatch(login(user.uid, user.displayName));
         setLog(true);
+
+        const ragistroData= await loadData(user.uid);
+        dispatch(leerRegistros(ragistroData))
+
       } else
         setLog(false);
     }

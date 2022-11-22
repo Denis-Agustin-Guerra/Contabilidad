@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { startLogout } from '../actions/auth'
+import { limpirar } from '../actions/nomina'
 import './styles_component.css'
 
 const Navbar = () => {
@@ -8,6 +9,7 @@ const Navbar = () => {
     const dispatch = useDispatch()
 
     const handleLogout = () => {
+        dispatch(limpirar())
         dispatch(startLogout())
     }
 
