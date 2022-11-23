@@ -92,9 +92,6 @@ export const RegisterScreen = () => {
                         </div>
                         <button className='btn' type='submit'>Enviar</button>
                     </div>
-                    <hr />
-                    {/* <GoogleButton onClick={handleGoogleLongin} /> */}
-                    <Link to='/auth/login'>Login into a count</Link>
                 </form>
             </div>
         </div>

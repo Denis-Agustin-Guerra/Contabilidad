@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import Balance from '../components/Balance'
 import Element from '../components/Element'
 import FormAdd from '../components/FormAdd'
 import Navbar from '../components/Navbar'
@@ -24,29 +25,37 @@ const AppScreen = () => {
                 <FormAdd />
             </div>
             <h3 className='center'>Libro Mayor</h3>
+            <table className="highlight">
+                <thead>
+                    <tr>
+                        <th className='width-th'>Fecha</th>
+                        <th className='width-cu'>Cuenta</th>
+                        <th className='width-th'>Debe</th>
+                        <th className='width-th'>Haber</th>
+                        <th className='width-th'>Editar</th>
+                    </tr>
+                </thead>
+            </table>
             <div className='overFlow'>
                 <table className="highlight">
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Debe o Haber</th>
-                            <th>Cuenta</th>
-                            <th>Monto</th>
-                            <th>Editar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
+                    <tbody >
                         {
                             data2.map((elemento) => {
                                 return <Element data={elemento} key={elemento.id} />
                             })
                         }
                     </tbody>
-
-
                 </table>
             </div>
+            <hr />
+            <div className='row'>
+                <table>
+                    <tfoot>
+                        <Balance data={data} key={data.id} />
+                    </tfoot>
+                </table>
+            </div>
+
         </div>
     )
 }

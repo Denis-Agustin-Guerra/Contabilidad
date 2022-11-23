@@ -4,3 +4,12 @@
 .overFlow{
     overflow: auto;
 }
+.none{
+    visibility: hidden;
+}
+.width-th{
+    width: 15%;
+}
+.width-cu{
+    width: 40%;
+}

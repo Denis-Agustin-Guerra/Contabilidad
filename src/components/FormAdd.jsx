@@ -64,7 +64,7 @@ const FormAdd = () => {
                 if (debehaber.toLowerCase().trim() === 'debe') {
                     const debehaber2='Haber'
                     const debehaber='Debe'
-                    console.log(debehaber)
+                    // console.log(debehaber)
                     dispatch(crearRegistro(fecha, debehaber, cuenta, monto));
                     // const handleSave2 = () => {
                     dispatch(crearRegistro(fecha, debehaber2, cuenta2, monto2)); //debehaber ponerlo en 2 cuando se tenga la funcion 
