@@ -94,21 +94,21 @@ export const RegisterScreen = () => {
               <div className="row">
                 <div className="input-field col s12">
                   <i className="material-icons prefix">person</i>
-                  <input onChange={handleChanges} value={username} name="username" id="username" type="text" className="validate" />
+                  <input onChange={handleChanges} value={username} name="username" id="username" type="text" className="validate white-text" />
                   <label htmlFor="user name">User name</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <i className="material-icons prefix">email</i>
-                  <input onChange={handleChanges} value={email} name="email" id="email" type="email" className="validate" />
+                  <input onChange={handleChanges} value={email} name="email" id="email" type="email" className="validate white-text" />
                   <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <i className="material-icons prefix">key</i>
-                  <input onChange={handleChanges} value={password} name="password" id="password" type="password" className="validate" />
+                  <input onChange={handleChanges} value={password} name="password" id="password" type="password" className="validate white-text" />
                   <label htmlFor="password">Password</label>
                 </div>
               </div>
