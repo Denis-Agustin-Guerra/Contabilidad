@@ -36,9 +36,9 @@ const LoginScreen = () => {
     const handleGoogleLongin = () => {
         dispatch(googleLogin());
     }
-    // const handleRegister = () => {
-    //     dispatch(<RegisterScreen/>);
-    // }
+
+
+    
     const handleEmailLogin = (e) => {
         e.preventDefault();
         if (email.trim === "" || !email.trim().includes("@")) {
@@ -50,10 +50,14 @@ const LoginScreen = () => {
         dispatch(startLoginEmailPassword(email, password));
     }
     return (
-        <div className='container'>
-            <h3>Login</h3>
+        <div className='col container'>
+            <h3>Sistema de contabilidad UTN-frm</h3>
+            <div className='col s12 container center'>
+                <img className='radius' src="../logo_UTN.png" alt="Logo-UTN" />
+            </div>
             <hr />
-            <div className="row">
+            <h3>Login</h3>
+            <div className="container">
                 <form onSubmit={handleEmailLogin} className="col s12">
                     <div className="row">
                         <div className="input-field col s12">
@@ -76,7 +80,6 @@ const LoginScreen = () => {
                     </div>
                     <hr />
                     <GoogleButton onClick={handleGoogleLongin} />
-                    {/* <button onClick={handleRegister} className='btn'>Register</button> */}
                     <Link to='/auth/register'>Register in the platform</Link>
                 </form>
             </div>

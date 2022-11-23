@@ -11,7 +11,7 @@ const PublicRouter = ({ log, component: Component, ...resto }) => {
     return (
         <Route {...resto}
         component={(props) =>
-            log ? <AppScreen /> : <LoginScreen />
+            log ? <AppScreen /> : <Component {...props} /> //<LoginScreen />
         }
         />
     )
